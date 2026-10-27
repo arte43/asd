@@ -1,0 +1,25 @@
+#include <iostream>
+
+int main() {
+    unsigned long long factorial = 1;
+    int n = 0;
+
+    std::cout << "Введите неотрицательное число (0-20): ";
+    if (!(std::cin >> n)) {
+        std::cerr << "Ошибка: введено не число!" << std::endl;
+        return 1;
+    }
+
+    if (n < 0 || n > 20) {
+        std::cerr << "Ошибка: число должно быть в диапазоне от 0 до 20!" << std::endl;
+        return 1;
+    }
+
+    for (int i = 1; i <= n; ++i) {
+        factorial *= i; 
+    }
+
+    std::cout << n << "! = " << factorial << std::endl;
+
+    return 0;
+}
