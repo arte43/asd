@@ -1,0 +1,30 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int n;
+    if (!(cin >> n)) return 1; // Проверка на корректность ввода
+
+    if (n <= 1) {
+        cout << "not" << endl;
+        return 0;
+    }
+
+    bool is_prime = true;
+    // Оптимизация: проверяем делители до i * i <= n
+    for (int i = 2; i * i <= n; ++i) {
+        if (n % i == 0) {
+            is_prime = false;
+            break;
+        }
+    }
+
+    if (is_prime) {
+        cout << "prime" << endl;
+    } else {
+        cout << "not" << endl;
+    }
+
+    return 0;
+}
