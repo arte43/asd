@@ -1,0 +1,22 @@
+#include <iostream>
+#include <iomanip> 
+
+using namespace std;
+
+int main() {
+    const int TABLE_SIZE = 10; 
+    const int COLUMN_WIDTH = 4;
+
+    cout << "=== ТАБЛИЦА УМНОЖЕНИЯ ===" << endl << endl;
+
+    for (int i = 1; i <= TABLE_SIZE; i++) {
+        
+        for (int j = 1; j <= TABLE_SIZE; j++) {
+            cout << setw(COLUMN_WIDTH) << i * j;
+        }
+        
+        cout << endl;
+    }
+
+    return 0;
+}
